@@ -17,3 +17,14 @@ def vista_con_edad(request,edad):
 
 def vista_con_template(request):
     return render(request,'template.html', context={})
+
+def saludo_desde_templates(request):
+    context = {
+        'nombre':'gustavo',
+        'edad':56,
+        'usa_lentes':True,
+        'lista':[1,2,3,4,5,6,7,8,9,10][5],
+        'lista_frutas':['manzana','pera','banana','naranja'],
+    }
+    return render (request,'saludo.html',context=context)
+ 
