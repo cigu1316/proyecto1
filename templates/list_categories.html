@@ -9,18 +9,10 @@
 <body>
     <h1 style="color:rgb(255, 140, 0);">hola desde listado de productos </h1>
 
-    {% for product in products %}
+    {% for category in categories %}
 
-      <p>el producto es {{product.name}}</p>
+      <p>el nombre de la categoria es {{category.name}}</p>
 
-      <p>su precio es $ {{product.price}}</p>
-
-      {% if product.stock ==  True  %}
-
-            <p>hay stock</p>
-      {% else %}
-            <p>temporalmente sin stock</p>   
-      {% endif %}
      
 
     {% endfor %}
