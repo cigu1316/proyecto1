@@ -17,7 +17,6 @@ def list_products(request):
     }
     return render(request,'list_products.html',context=context)
 
-
 def list_categories(request):
     all_categories = Category.objects.all()
     print(all_categories)
@@ -26,7 +25,6 @@ def list_categories(request):
         
     }
     return render(request,'list_categories.html',context=context)
-
 
 def create_category(request,name):
     new_category = Category.objects.create(name=name)
