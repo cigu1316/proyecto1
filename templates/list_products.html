@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hola desde list_productos </h1>
+
+    {% for product in products %}
+
+      <p>el producto es {{product.name}}</p>
+
+      <p>su precio es{{product.price}}</p>
+
+      {% if product.stock ==  True  %}
+
+            <p>temporalmente hay stock</p>
+      {% else %}
+            <p>temporalmente sin stock</p>   
+      {% endif %}
+     
+
+    {% endfor %}
+
+
+</body>
+</html>
