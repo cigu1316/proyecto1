@@ -27,7 +27,7 @@ def saludo_desde_templates(request):
         'lista':[1,2,3,4,5,6,7,8,9,10][5],
         'lista_frutas':['manzana','pera','banana','naranja'],
     }
-    return render (request,'saludo.html',context=context)
+    return render (request,'varias/saludo.html',context=context)
 
 def index(request):
     return render(request,'index.html',context={})

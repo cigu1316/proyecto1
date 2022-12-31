@@ -15,16 +15,14 @@ def list_products(request):
         'products': all_products,
         
     }
-    return render(request,'list_products.html',context=context)
+    return render(request,'products/list_products.html',context=context)
 
 def list_categories(request):
     all_categories = Category.objects.all()
-    print(all_categories)
     context = {
         'categories': all_categories,
-        
-    }
-    return render(request,'list_categories.html',context=context)
+     }
+    return render(request,'products/list_categories.html',context=context)
 
 def create_category(request,name):
     new_category = Category.objects.create(name=name)
