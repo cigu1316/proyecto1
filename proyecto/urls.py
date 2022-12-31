@@ -5,6 +5,7 @@ from proyecto.views import hola_mundo ,otra_mas,fecha_actual,vista_con_edad,\
 
                             
 urlpatterns = [
+    path('',index , name='index'),  
     path('admin/', admin.site.urls),
     path('hola/',hola_mundo ,name = 'hola_mundo'),
     path('otra/',otra_mas),
@@ -13,7 +14,7 @@ urlpatterns = [
     path('vista-con-template/',vista_con_template),
     path('saludo-desde-templates/',saludo_desde_templates),
    
-    path('products/',include('products.urls')),     
-    path('',index , name='index')         
+    path('products/',include('products.urls')),       
+    path('orders/',include('orders.urls')),    
 ]
 

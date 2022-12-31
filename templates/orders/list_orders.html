@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>listar productos</title>
+    <title>listar ordenes</title>
 
 
     <header>
@@ -72,24 +72,17 @@
 
 
   
-    <h1 style="color:rgb(255, 140, 0);">hola desde listado de productos </h1>
+    <h1 style="color:rgb(255, 140, 0);">hola desde listado de ordenes </h1>
 
-    {% for product in products %}
+    {% for orders in orders %}
 
     <div class="card" style="width: 18rem;">
     <img src="https://th.bing.com/th?q=Coca-Cola+Fria&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=es-AR&cc=AR&setlang=es&adlt=moderate&t=1&mw=247...">
     <div class="card-body">
-    <h5 class="card-title">{{product.name}}</h5>
-    <p class="card-text">su precio es $ {{product.price}} </p>
-    
-    {% if product.stock ==  True  %}
-
-    <p>hay stock</p>
-      {% else %}
-    <p>temporalmente sin stock</p>   
-      {% endif %}
-      
-    <a href="#" class="btn btn-primary">comprar</a>
+    <h4><class="card-title">el cliente : {{orders.client}}</h4>
+    <p class="card-text">compro el producto {{orders.product}} el {{orders.creation_time}} </p>
+    <p class="card-text">el pago se realizo con {{orders.payment_method}} </p>    
+    <a href="#" class="btn btn-primary">ver detalle</a>
   </div>
 </div>
 
