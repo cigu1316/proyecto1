@@ -28,3 +28,6 @@ def saludo_desde_templates(request):
         'lista_frutas':['manzana','pera','banana','naranja'],
     }
     return render (request,'saludo.html',context=context)
+
+def index(request):
+    return render(request,'index.html',context={})
