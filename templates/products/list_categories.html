@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1 style="color:rgb(255, 140, 0);">hola desde listado de productos </h1>
+{% extends 'base.html'%}
 
+{% block title %}
+
+listado de categorias
+
+{% endblock %}
+
+
+
+<body>
+  
+  {% block content %}
+    
     {% for category in categories %}
 
-      <p>el nombre de la categoria es {{category.name}}</p>
-
+    <p>el nombre de la categoria es {{category.name}}</p>
      
-
-    {% endfor %}
-
+  {% endfor %}
+  {% endblock %}
 
 </body>
 </html>
