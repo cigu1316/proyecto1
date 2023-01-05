@@ -11,3 +11,12 @@ class Orders(models.Model):
     creation_time = models.DateTimeField(auto_now_add=True)
     payment_method = models.CharField(choices=CHOICES ,max_length=4)   
     
+    def __str__(self):
+        return self.client
+    
+    
+    class Meta:
+        verbose_name = 'Orden'
+        verbose_name_plural = 'Ordenes'
+class Category(models.Model):
+    name = models.CharField(max_length= 60 ,unique=True )   
