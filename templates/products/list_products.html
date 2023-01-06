@@ -1,18 +1,11 @@
 {% extends 'base.html'%}
 
 {% block title %}
-
 listado de products
-
 {% endblock %}
 
-
-
-
 {% block content %}
-<h5></h5>
-
-
+<h5>crear nuevo</h5> <a href="/products/create-product/" class="btn btn-primary">crear</a>
 
     {% for product in products %}
 

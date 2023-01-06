@@ -2,11 +2,35 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from products.models import Products,Category
+from products.forms import ProductsForm
 
 def create_product(request):
-    new_product=Products.objects.create(name ='Coca Cola 1 litro', price = 300 , stock = False)
-    print(new_product)
-    return HttpResponse('nuevo producto creado')
+    if request.method == 'GET':
+        context ={
+            'form': ProductsForm()
+        }
+        return render(request,'products/create_product.html', context=context)  
+      
+    elif request.method == 'POST':
+        form = ProductsForm(request.POST)
+        if form.is_valid():
+            Products.objects.create(
+                name = form.cleaned_data['name'],
+                price =form.cleaned_data['price'],
+                stock =form.cleaned_data['stock'],
+                    
+            )
+        return render (request,'products/create_product.html', context={})
+            
+    else:
+        context = {
+            'form_errors' : form.errors,
+            'form': ProductsForm()
+        }
+        return render (request,'products/create_product.html', context={})
+            
+                   
+     
 
 def list_products(request):
     all_products = Products.objects.all

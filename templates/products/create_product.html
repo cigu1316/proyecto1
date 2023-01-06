@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+creacion de productos
+{% endblock %}
+
+
+{% block content %}
+
+creando productos
+
+{% if form %}
+   <form action="" method = 'POST'>
+
+ {% csrf_token %}   
+
+<table>
+ {{ form.as_table }}
+</table>
+
+<input type='submit' value='crear producto'></p>
+
+</form>
+
+{% endif %}
+
+{% if form_errors %}
+<h4 style="color:red;">ERRORES </h4>
+{{ form_errors }}
+
+{% endif %}
+{% endblock %}
+
