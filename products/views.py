@@ -18,9 +18,11 @@ def create_product(request):
                 name = form.cleaned_data['name'],
                 price =form.cleaned_data['price'],
                 stock =form.cleaned_data['stock'],
-                    
-            )
-        return render (request,'products/create_product.html', context={})
+        )
+            context={ 
+                'messaje':'producto creado exitosamente'
+            }
+        return render (request,'products/create_product.html', context=context)
             
     else:
         context = {
@@ -29,15 +31,15 @@ def create_product(request):
         }
         return render (request,'products/create_product.html', context={})
             
-                   
-     
 
 def list_products(request):
-    all_products = Products.objects.all
-    print(all_products)
+    if 'search' in request.GET:
+        search = request.GET['search']
+        products= Products.objects.filter(name__contains=search)
+    else:
+        products = Products.objects.all()
     context = {
-        'products': all_products,
-        
+        'products': products,
     }
     return render(request,'products/list_products.html',context=context)
 

@@ -8,26 +8,30 @@ creacion de productos
 
 {% block content %}
 
-creando productos
 
 {% if form %}
    <form action="" method = 'POST'>
 
- {% csrf_token %}   
+  {% csrf_token %}   
 
-<table>
- {{ form.as_table }}
-</table>
+ <table>
+     {{ form.as_table }}
+ </table>
 
-<input type='submit' value='crear producto'></p>
+ <input type='submit' value='crear producto'></p>
 
-</form>
+ </form>
 
 {% endif %}
 
 {% if form_errors %}
 <h4 style="color:red;">ERRORES </h4>
+
 {{ form_errors }}
+{% endif %}
+
+{% if messaje %}
+<h4 style="color:rgb(81, 255, 0);">{{messaje}}</h4>
 
 {% endif %}
 {% endblock %}
