@@ -1,6 +1,5 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
 from products.models import Products,Category
 from products.forms import ProductsForm
 

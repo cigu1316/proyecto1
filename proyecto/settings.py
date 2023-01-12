@@ -34,6 +34,7 @@ THIRD_APPS=[]
 MY_APPS=[
     'products',
     'orders',
+    'providers',
 ]
 
 INSTALLED_APPS= BASE_APPS + THIRD_APPS + MY_APPS
