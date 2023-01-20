@@ -1,23 +1,17 @@
-{% extends 'base.html'%}
+{% extends 'base.html' %}
 
 {% block title %}
-
-listado de categorias
-
+    Listado de categorias
 {% endblock %}
 
+{% block content %}
 
+    <h1>listado de categorias</h1>
 
-<body>
-  
-  {% block content %}
-    
     {% for category in categories %}
 
-    <p>el nombre de la categoria es {{category.name}}</p>
-     
-  {% endfor %}
-  {% endblock %}
+        <p>El nombre de la categoria es: {{category.name}} </p>
 
-</body>
-</html>
+    {% endfor %}
+
+{% endblock %}

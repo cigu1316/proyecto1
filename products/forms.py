@@ -1,7 +1,6 @@
 from django import forms
 
-class ProductsForm(forms.Form):
+class ProductForm(forms.Form):
     name = forms.CharField(max_length=100)
-    price =forms.FloatField()
+    price = forms.FloatField()
     stock = forms.BooleanField(required=False)
-    
